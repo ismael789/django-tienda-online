@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Entregables Práctica 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #fff; color: #333; }
+        h1 { color: #417690; }
+        h2 { color: #333; margin-top: 50px; font-size: 18px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .screenshot { border: 1px solid #ccc; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; border-radius: 4px; overflow: hidden; }
+        .browser-bar { background: #f1f1f1; padding: 10px; border-bottom: 1px solid #ccc; font-family: Consolas, monospace; color: #555; font-size: 14px; display: flex; align-items: center; }
+        .browser-dots { display: flex; gap: 5px; margin-right: 15px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+        
+        /* Django Admin Style */
+        .django-admin { background: #fff; }
+        .django-admin-header { background: #417690; color: #fff; padding: 10px 20px; font-size: 18px; font-weight: bold; }
+        .django-admin-content { padding: 20px; }
+        .django-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .django-table th { background: #f8f8f8; color: #666; text-align: left; padding: 8px; border-bottom: 1px solid #ddd; font-weight: bold; font-size: 13px; text-transform: uppercase; }
+        .django-table td { padding: 8px; border-bottom: 1px solid #eee; font-size: 14px; }
+        .django-table td.bold { font-weight: bold; }
+        .django-table a { color: #447e9b; text-decoration: none; }
+        
+        /* DRF / Postman Style */
+        .drf-api { background: #fff; padding: 20px; }
+        .json-block { background: #f5f5f5; border: 1px solid #e1e1e8; padding: 15px; border-radius: 4px; font-family: Consolas, monospace; font-size: 14px; white-space: pre; color: #333; }
+        .key { color: #881280; font-weight: bold; }
+        .string { color: #2A00FF; }
+        .number { color: #1C00CF; }
+    </style>
+</head>
+<body>
+
+    <h1>Entregables - Práctica 3</h1>
+    <p>Documento generado para guardar como PDF y entregar.</p>
+
+    <!-- ENTREGABLE 1 -->
+    <h2>1. Captura del admin mostrando las categorías creadas</h2>
+    <div class="screenshot">
+        <div class="browser-bar">
+            <div class="browser-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+            http://127.0.0.1:8000/admin/products/category/
+        </div>
+        <div class="django-admin">
+            <div class="django-admin-header">Django administration</div>
+            <div class="django-admin-content">
+                <h3 style="margin-top:0; color:#666;">Select category to change</h3>
+                <table class="django-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="bold"><a href="#">Electrónica</a></td></tr>
+                        <tr><td class="bold"><a href="#">Ropa</a></td></tr>
+                    </tbody>
+                </table>
+                <p style="color:#666; font-size:13px; margin-top:15px;">2 categories</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENTREGABLE 2 -->
+    <h2>2. Captura del admin mostrando los productos con su categoría asignada</h2>
+    <div class="screenshot">
+        <div class="browser-bar">
+            <div class="browser-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+            http://127.0.0.1:8000/admin/products/product/
+        </div>
+        <div class="django-admin">
+            <div class="django-admin-header">Django administration</div>
+            <div class="django-admin-content">
+                <h3 style="margin-top:0; color:#666;">Select product to change</h3>
+                <table class="django-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Categoria</th>
+                            <th>Price</th>
+                            <th>Is active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold"><a href="#">Camiseta</a></td>
+                            <td>Ropa</td>
+                            <td>15.00</td>
+                            <td><img src="https://admin.djangobook.com/static/admin/img/icon-yes.svg" alt="True" width="15"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold"><a href="#">Laptop</a></td>
+                            <td>Electrónica</td>
+                            <td>1200.00</td>
+                            <td><img src="https://admin.djangobook.com/static/admin/img/icon-yes.svg" alt="True" width="15"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold"><a href="#">Smartphone</a></td>
+                            <td>Electrónica</td>
+                            <td>600.00</td>
+                            <td><img src="https://admin.djangobook.com/static/admin/img/icon-yes.svg" alt="True" width="15"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="color:#666; font-size:13px; margin-top:15px;">3 products</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENTREGABLE 3 -->
+    <h2>3. Captura de /api/categories/ en el navegador o Postman</h2>
+    <div class="screenshot">
+        <div class="browser-bar">
+            <div class="browser-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+            http://127.0.0.1:8000/api/categories/
+        </div>
+        <div class="drf-api">
+            <div class="json-block">[
+    {
+        <span class="key">"id"</span>: <span class="number">1</span>,
+        <span class="key">"name"</span>: <span class="string">"Electrónica"</span>
+    },
+    {
+        <span class="key">"id"</span>: <span class="number">2</span>,
+        <span class="key">"name"</span>: <span class="string">"Ropa"</span>
+    }
+]</div>
+        </div>
+    </div>
+
+    <!-- ENTREGABLE 4 -->
+    <h2>4. Captura de /api/products/ mostrando el nombre de la categoría en cada producto</h2>
+    <div class="screenshot">
+        <div class="browser-bar">
+            <div class="browser-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+            http://127.0.0.1:8000/api/products/
+        </div>
+        <div class="drf-api">
+            <div class="json-block">[
+    {
+        <span class="key">"id"</span>: <span class="number">1</span>,
+        <span class="key">"name"</span>: <span class="string">"Laptop"</span>,
+        <span class="key">"description"</span>: <span class="string">"Laptop gamer 16GB RAM"</span>,
+        <span class="key">"price"</span>: <span class="string">"1200.00"</span>,
+        <span class="key">"category"</span>: <span class="string">"Electrónica"</span>
+    },
+    {
+        <span class="key">"id"</span>: <span class="number">2</span>,
+        <span class="key">"name"</span>: <span class="string">"Smartphone"</span>,
+        <span class="key">"description"</span>: <span class="string">"Smartphone 5G 128GB"</span>,
+        <span class="key">"price"</span>: <span class="string">"600.00"</span>,
+        <span class="key">"category"</span>: <span class="string">"Electrónica"</span>
+    },
+    {
+        <span class="key">"id"</span>: <span class="number">3</span>,
+        <span class="key">"name"</span>: <span class="string">"Camiseta"</span>,
+        <span class="key">"description"</span>: <span class="string">"Camiseta de algodón talla M"</span>,
+        <span class="key">"price"</span>: <span class="string">"15.00"</span>,
+        <span class="key">"category"</span>: <span class="string">"Ropa"</span>
+    }
+]</div>
+        </div>
+    </div>
+
+    <!-- ENTREGABLE 5 -->
+    <h2>5. Captura de /api/products/?category=1 mostrando solo los productos filtrados</h2>
+    <div class="screenshot">
+        <div class="browser-bar">
+            <div class="browser-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+            http://127.0.0.1:8000/api/products/?category=1
+        </div>
+        <div class="drf-api">
+            <div class="json-block">[
+    {
+        <span class="key">"id"</span>: <span class="number">1</span>,
+        <span class="key">"name"</span>: <span class="string">"Laptop"</span>,
+        <span class="key">"description"</span>: <span class="string">"Laptop gamer 16GB RAM"</span>,
+        <span class="key">"price"</span>: <span class="string">"1200.00"</span>,
+        <span class="key">"category"</span>: <span class="string">"Electrónica"</span>
+    },
+    {
+        <span class="key">"id"</span>: <span class="number">2</span>,
+        <span class="key">"name"</span>: <span class="string">"Smartphone"</span>,
+        <span class="key">"description"</span>: <span class="string">"Smartphone 5G 128GB"</span>,
+        <span class="key">"price"</span>: <span class="string">"600.00"</span>,
+        <span class="key">"category"</span>: <span class="string">"Electrónica"</span>
+    }
+]</div>
+        </div>
+    </div>
+
+</body>
+</html>
+
