@@ -34,3 +34,6 @@ htmlcov/
 .pytest_cache/
 .mypy_cache/
 
+# Local evidence-generation files
+tmp/
+
